@@ -2,7 +2,7 @@
 const questions = {
     one: {
         question: "Question 1",
-        hint: "Hint 1", //should hint go in objects constant or cached element references? obj constant
+        hint: "Hint 1", //should hint go in objects constant or cached element references? obj constant.
         answer: "Answer 1",
     },
     two: {
@@ -24,7 +24,7 @@ const questions = {
 // console.log(questions.one.answer);
 
 /*----- app's state (variables) -----*/
-let turn, answer, round, finish; //variables that change throughout the time of the game/ as we interact w/ game
+let turn, round, finish; //variables that change as we interact w/ game. answer var is turn var
 
 /*----- cached element references -----*/
 const smileFace = {
@@ -37,10 +37,15 @@ const smileFace = {
 //  console.log(smileFace.fill);
 
 /*----- event listeners -----*/ //should keyboard be a cached elements with a-z as objects?
-document.querySelector("#keyboard").addEventListener('click', keyboard); //event click on keyboard, style 
-document.querySelector("#replay").addEventListener("click", replay); //event click on replay button
+document.querySelector("#keyboard").addEventListener('click', keyboard); //style for right/wrong click
+document.querySelector("#replay").addEventListener("click", replay); 
 
 /*----- functions -----*/
+
+function init() {
+
+    render()
+};
 
 function keyboard() {
     // console.log(evt.target);
