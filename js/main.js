@@ -28,13 +28,13 @@ let turn, answer, round, finish; //variables that change throughout the time of 
 
 /*----- cached element references -----*/
 const smileFace = {
-    circle: document.querySelector("circle"),
-    eyeOne: document.querySelector("eye1"),
-    eyeTwo: document.querySelector("eye2"),
-    smile: document.querySelector("smile"),
-    fill: document.querySelector("fill"),
+    circle: document.querySelector("#circle"),
+    eyeOne: document.querySelector("#eye1"),
+    eyeTwo: document.querySelector("#eye2"),
+    smile: document.querySelector("#smile"),
+    fill: document.querySelector("#fill"),
 };
-// console.log(smileFace.fill);
+ console.log(smileFace.fill);
 
 /*----- event listeners -----*/
 // document.querySelector("").addEventListener('click', ); //event click on keyboard, correct answer
@@ -44,5 +44,5 @@ document.querySelector("#replay").addEventListener("click", replay); //event cli
 /*----- functions -----*/
 
 function replay() {
-    console.log("We made it!");
+    // console.log("We made it!");
 };
