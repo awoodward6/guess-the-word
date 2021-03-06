@@ -12,18 +12,16 @@ const questions = {
     },
     three: {
         question: "Question 3",
-        hint: "Hint 3"
+        hint: "Hint 3",
         answer: "Answer 3",
     },
     four: {
         question:"Question 4",
-        hint: "Hint 4"
+        hint: "Hint 4",
         answer: "Answer 4",
     }
 };
-
 // console.log(questions.one.answer);
-
 
 /*----- app's state (variables) -----*/
 let turn, answer, round, finish; //variables that change throughout the time of the game/ as we interact w/ game
@@ -39,10 +37,12 @@ const smileFace = {
 // console.log(smileFace.fill);
 
 /*----- event listeners -----*/
-// document.querySelector('click', ) //event click on keyboard, correct answer
-// document.querySelector('click', keyboard) //event click on keyboard, wrong answer
-document.querySelector('click', replay); //event click on replay button
-console.log(replay);
-
+// document.querySelector("").addEventListener('click', ); //event click on keyboard, correct answer
+// document.querySelector("").addEventListener('click', keyboard); //event click on keyboard, wrong answer
+document.querySelector("#replay").addEventListener("click", replay); //event click on replay button
 
 /*----- functions -----*/
+
+function replay() {
+    console.log("We made it!");
+};
