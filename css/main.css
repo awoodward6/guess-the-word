@@ -1,4 +1,20 @@
 
+#circle,  #yellow {
+    margin: 0 0 0 0;
+    height:15%;
+    width: 15%;
+}
+
+#smile {
+    height: 10%;
+    width: 10%;
+}
+
+#eye1, #eye2 {
+    /*height: 20%; not working */
+    width: 2%;
+}
+
 #keyboard {
     display: flex;
     flex-wrap: wrap; /*not working*/

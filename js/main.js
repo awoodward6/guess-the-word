@@ -13,7 +13,7 @@ const questions = {
         answer: "Clueless",
     },
     four: {
-        question:"Based off the Taming of the Shrew, this 1999 movie, ...",
+        question:"Question 4",
         answer: "10 Things I Hate About You",
     }
     five: {
