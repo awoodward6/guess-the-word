@@ -2,7 +2,7 @@
 const questions = {
     one: {
         question: "Question 1",
-        hint: "Hint 1", //should hint go in objects constant or cached element references
+        hint: "Hint 1", //should hint go in objects constant or cached element references? obj constant
         answer: "Answer 1",
     },
     two: {
@@ -34,15 +34,18 @@ const smileFace = {
     smile: document.querySelector("#smile"),
     fill: document.querySelector("#fill"),
 };
- console.log(smileFace.fill);
+//  console.log(smileFace.fill);
 
-/*----- event listeners -----*/
-// document.querySelector("").addEventListener('click', ); //event click on keyboard, correct answer
-// document.querySelector("").addEventListener('click', keyboard); //event click on keyboard, wrong answer
+/*----- event listeners -----*/ //should keyboard be a cached elements with a-z as objects?
+document.querySelector("#keyboard").addEventListener('click', keyboard); //event click on keyboard, style 
 document.querySelector("#replay").addEventListener("click", replay); //event click on replay button
 
 /*----- functions -----*/
 
+function keyboard() {
+    // console.log(evt.target);
+};
+
 function replay() {
-    // console.log("We made it!");
+//    console.log("We made it");
 };
