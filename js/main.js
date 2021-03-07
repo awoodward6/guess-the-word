@@ -19,12 +19,12 @@ const questions = {
         question:"Question 4",
         hint: "Hint 4",
         answer: "Answer 4",
-    }
+    },
 };
 // console.log(questions.one.answer);
 
 /*----- app's state (variables) -----*/
-let turn, round, finish; //variables that change as we interact w/ game. answer var is turn var
+let guess, round, finish; //variables that change as we interact w/ game. answer var is turn/guess var
 
 /*----- cached element references -----*/
 const smileFace = {
@@ -36,15 +36,38 @@ const smileFace = {
 };
 //  console.log(smileFace.fill);
 
-/*----- event listeners -----*/ //should keyboard be a cached elements with a-z as objects?
+const message= document.querySelector("message");
+// console.log("message");
+
+/*----- event listeners -----*/ //*should keyboard be a cached elements with a-z as separate objects?
 document.querySelector("#keyboard").addEventListener('click', keyboard); //style for right/wrong click
 document.querySelector("#replay").addEventListener("click", replay); 
 
 /*----- functions -----*/
 
 function init() {
+    //guess var is the user individual keyboard selection
+    guess
+  
+    //round var is game progressing to the next round. *do i need of var if guess complete? return to next obj
+    round
 
-    render()
+    //finish var is final random question - break - end game 
+    //and start over with replay button visible. *finish seems like duplicate of round/replay?
+    finish = null;
+    // render()
+};
+
+// init();
+
+function render() {  //taking state variables and putting it in the DOM/screen
+    
+    // replay.style.display = "hidden";
+    // if (round === "complete") {
+    //     message.textContent= "It's cashed. Next round!";
+    // } else {
+    //     return;
+    // };
 };
 
 function keyboard() {
