@@ -2,26 +2,37 @@
 const questions = {
     one: {
         question: "Question 1",
-        hint: "Hint 1", //should hint go in objects constant or cached element references? obj constant.
-        answer: "Answer 1", //should answer be a separate constant block?
+        hint: "Hint 1", 
     },
     two: {
         question: "Question 2",
         hint: "Hint 2",
-        answer: "Answer 2",
     },
     three: {
         question: "Question 3",
         hint: "Hint 3",
-        answer: "Answer 3",
     },
     four: {
         question:"Question 4",
         hint: "Hint 4",
-        answer: "Answer 4",
     },
 };
 // console.log(questions.one.answer);
+
+const answers = {
+    one: {
+        answer: "Answer 1", 
+    },
+    two: {
+        answer: "Answer 2",
+    },
+    three: {
+        answer: "Answer 3",
+    },
+    four: {
+        answer: "Answer 4",
+    },
+}; 
 
 const smileFace = {
     circle: document.querySelector("#circle"),
@@ -34,42 +45,33 @@ const smileFace = {
 //  console.log(smileFace.fill);
 
 /*----- app's state (variables) -----*/ //variables that change as we interact w/ game.
-let key, guess, finish; 
+let key, question, guess, finish; 
 
 /*----- cached element references -----*/ //elements update appearance of using javascript
-const message= document.querySelector("message");
+const q= document.querySelector("#question");
+const h=document.querySelector("#hint");
+const message= document.querySelector("#message");
 // console.log("message");
-// const board = document.querySelector("keyboard");
-// const replayBtn = document.querySelector("replay");
 
-/*----- event listeners -----*/ //*should keyboard be a cached elements with a-z as separate objects?
+/*----- event listeners -----*/ 
 document.querySelector("#keyboard").addEventListener('click', keyboard); 
 document.querySelector("#replay").addEventListener("click", replay); 
-// board.addEventListener('click, handleClick);
-// replayBtn.addEventListener('click', init);
 
 /*----- functions -----*/
-
 function init() {
-    //key var is the board
-    key = new Array(26);
-    //guess is the user individual keyboard selection
-    guess = 1;
-    //finish var is final random question - break - end game 
-    //and start over with replay button visible. 
-    finish = null;
-    // render()
+    key = new Array(26); //key var is the board
+    let questionArray= Object.entries(questions)
+    let idx = Math.floor(Math.random() * questionArray.length);
+    question = questionArray[idx][1];
+    console.log(question);
+    guess = 1; //guess is the user individual selection
+    finish = null; //finish var is final q - break - end game. start over with replay button visible. 
+    render()
 };
-// init();
-
-function randomQ() {
-    let questions = Object.keys(questions);
-    let randomIdx = Math.floor(Math.random() * question.length);
-    return questions[randomIdx];
-};
-console.log(questions);
+init();
 
 function render() {  //taking state variables and putting it in the DOM/screen
+    document.querySelector("#question").innerHTML = `${question.question} ${question.hint}`;
     // replay.style.display = "none";
     // if (guess === "complete") {
     //   message.textContent= "It's cashed. Next round!";
