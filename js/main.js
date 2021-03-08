@@ -3,7 +3,7 @@ const questions = {
     one: {
         question: "Question 1",
         hint: "Hint 1", //should hint go in objects constant or cached element references? obj constant.
-        answer: "Answer 1",
+        answer: "Answer 1", //should answer be a separate constant block?
     },
     two: {
         question: "Question 2",
@@ -39,11 +39,11 @@ let key, guess, finish;
 /*----- cached element references -----*/ //elements update appearance of using javascript
 const message= document.querySelector("message");
 // console.log("message");
-const board = document.querySelector("keyboard");
-const replayBtn = document.querySelector("replay");
+// const board = document.querySelector("keyboard");
+// const replayBtn = document.querySelector("replay");
 
 /*----- event listeners -----*/ //*should keyboard be a cached elements with a-z as separate objects?
-document.querySelector("#keyboard").addEventListener('click', keyboard); //style for right/wrong click
+document.querySelector("#keyboard").addEventListener('click', keyboard); 
 document.querySelector("#replay").addEventListener("click", replay); 
 // board.addEventListener('click, handleClick);
 // replayBtn.addEventListener('click', init);
@@ -52,7 +52,7 @@ document.querySelector("#replay").addEventListener("click", replay);
 
 function init() {
     //key var is the board
-    key = new Array(26).fill(null);
+    key = new Array(26);
     //guess is the user individual keyboard selection
     guess = 1;
     //finish var is final random question - break - end game 
@@ -60,14 +60,21 @@ function init() {
     finish = null;
     // render()
 };
-
 // init();
 
+function randomQ() {
+    let questions = Object.keys(questions);
+    let randomIdx = Math.floor(Math.random() * question.length);
+    return questions[randomIdx];
+};
+console.log(questions);
+
 function render() {  //taking state variables and putting it in the DOM/screen
-    // replay.style.display = "hidden";
-    // if (round === "complete") {
-    //     message.textContent= "It's cashed. Next round!";
-    // } else {
+    // replay.style.display = "none";
+    // if (guess === "complete") {
+    //   message.textContent= "It's cashed. Next round!";
+    //   replay.style.display = "block";
+    // } else if {
     //     return;
     // };
 };
