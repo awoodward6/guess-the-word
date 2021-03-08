@@ -23,21 +23,25 @@ const questions = {
 };
 // console.log(questions.one.answer);
 
-/*----- app's state (variables) -----*/
-let guess, round, finish; //variables that change as we interact w/ game. answer var is turn/guess var
-
-/*----- cached element references -----*/
 const smileFace = {
     circle: document.querySelector("#circle"),
     eyeOne: document.querySelector("#eye1"),
     eyeTwo: document.querySelector("#eye2"),
     smile: document.querySelector("#smile"),
     fill: document.querySelector("#fill"),
+    'null': null, //null when no guess. 
 };
 //  console.log(smileFace.fill);
 
+/*----- app's state (variables) -----*/ //variables that change as we interact w/ game.
+let guess, round, finish; //answer var is turn/guess var
+
+/*----- cached element references -----*/ //elements update appearance of using javascript
+
 const message= document.querySelector("message");
 // console.log("message");
+
+const board = document.getElementById("keyboard");
 
 /*----- event listeners -----*/ //*should keyboard be a cached elements with a-z as separate objects?
 document.querySelector("#keyboard").addEventListener('click', keyboard); //style for right/wrong click
