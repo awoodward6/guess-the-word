@@ -82,15 +82,14 @@ function render() {
     };
 };
 
-function keyboard(evt) {
-    
-    // let key = document.querySelector("#keyboard");
-    //     key.addEventListener("click", function(evt) {
-    //     if key === key[idx]
-    // });
-    // // render();
-    // console.log(evt);
-};
+function keyboard(e) {
+    document.addEventListener("click", function(e) {
+        document.getElementById('keyboard').style = "color:red";
+        console.log("Key ", e.target.textContent, " was clicked.");
+        });
+    };
+    render();
+
 
 // function checkGuess() {
 //     for (let ans in question) {
@@ -98,12 +97,6 @@ function keyboard(evt) {
 //     };
 // };
 
-// function end() {
-//     key.forEach(function(scenario) {
-//         if (key[scenario[idx]] < 5) {
-//             end = guess;
-//         };
-// });
 
 // function replay() {
 // //    console.log("We made it");
